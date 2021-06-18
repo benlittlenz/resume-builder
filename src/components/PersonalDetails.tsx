@@ -3,7 +3,7 @@ import React from 'react';
 export function PersonalDetails() {
   return (
     <div>
-      <div className="flex flex-col bg-white px-8 py-6 max-w-sm rounded-lg shadow-lg">
+      <div className="flex flex-col bg-white px-8 py-6 max-w-md rounded-lg shadow-lg">
         <div className="flex justify-between items-center">
           <a className="px-2 py-1 bg-gray-600 text-sm text-green-100 rounded" href="#">Personal Details</a>
           <span>
@@ -40,6 +40,62 @@ export function PersonalDetails() {
           </div>
         </div>
       </div>
+
+      <div className="flex flex-col bg-white px-6 py-6 max-w-md rounded-lg shadow-lg">
+        <div className="flex justify-between items-center">
+          <div className="w-full">
+            <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="fullname">
+              Full Name
+            </label>
+            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="fullname" type="text" placeholder="Enter your title, first and last name" />
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center py-4">
+          <div className="">
+            <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="fullname">
+              Email
+            </label>
+            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="fullname" type="text" placeholder="Email" />
+          </div>
+          <div className="ml-4">
+            <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="fullname">
+              Contact #
+            </label>
+            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="fullname" type="text" placeholder="Contact #" />
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center">
+          <div className="w-full">
+            <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="street">
+              Street
+            </label>
+            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="street" type="text" placeholder="Enter Street" />
+          </div>
+        </div>
+        <div className="-mx-3 md:flex mb-2 mt-4">
+          <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+            <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="city">
+              City
+            </label>
+            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="city" type="text" placeholder="City" />
+          </div>
+          <div className="md:w-1/2 px-3">
+            <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="postcode">
+              Post Code
+            </label>
+            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="country" type="text" placeholder="postcode" />
+          </div>
+          <div className="md:w-1/2 px-3">
+            <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="country">
+              Country
+            </label>
+            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="country" type="text" placeholder="zip" />
+          </div>
+        </div>
+      </div>
+
     </div>
   )
 }
