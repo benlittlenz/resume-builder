@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PersonalDetails } from './PersonalDetails'
+import { PersonalDetails } from './PersonsalDetails'
 
 export function Builder() {
   return (
