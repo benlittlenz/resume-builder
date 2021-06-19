@@ -5,7 +5,15 @@ import type { RootState } from '../app/store'
 interface CounterState {
   value: number
 }
-
+/*
+  fullname?: any
+  email?: any
+  phone?: any
+  street?:any
+  city?:any
+  postcode?:any
+  country?:any
+*/
 // Define the initial state using that type
 const initialState: CounterState = {
   value: 0,
@@ -17,6 +25,7 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
+      console.log(state.value)
       state.value += 1
     },
     decrement: (state) => {

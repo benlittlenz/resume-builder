@@ -1,8 +1,11 @@
-import React from 'react';
-import { useForm, SubmitHandler } from "react-hook-form";
+import React, { useState, useEffect } from 'react';
+import { useForm } from '../hooks/useForm'
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { formSubmitted } from '../../features/DetailsSlice';
 
 type FormProps = {
   setShowForm: (showForm: boolean) => void;
+  setData: (data: object) => any;
 }
 
 type Inputs = {
@@ -15,12 +18,24 @@ type Inputs = {
   country: string
 };
 
-export function Form({setShowForm}: FormProps) {
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+export function Form({setShowForm, setData}: FormProps) {
+  const [fields, handleChange] = useForm({
+    fullname: '',
+    email: '',
+    contactnum: '',
+    street: '',
+    city: '',
+    postcode: '',
+    country: ''
+  })
+  const dispatch = useAppDispatch()
+  
+  useEffect(() => {
+    dispatch(formSubmitted(fields))
+  }, [fields]);
 
   return (
-        <form className="flex flex-col bg-white px-6 py-6 max-w-md rounded-lg shadow-lg" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col bg-white px-6 py-6 max-w-md rounded-lg shadow-lg">
           <div className="flex justify-between items-center">
             <div className="w-full">
               <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="fullname">
@@ -28,7 +43,8 @@ export function Form({setShowForm}: FormProps) {
               </label>
               <input
                 className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="fullname" type="text" placeholder="Enter your title, first and last name"
-                {...register("fullname")}
+                value={fields.fullname}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -42,10 +58,11 @@ export function Form({setShowForm}: FormProps) {
               </label>
               <input
                 className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                id="fullname"
+                id="email"
                 type="text"
                 placeholder="Email"
-                {...register("email")}
+                value={fields.email}
+                onChange={handleChange}
               />
             </div>
             <div className="ml-4">
@@ -57,7 +74,8 @@ export function Form({setShowForm}: FormProps) {
               id="contactnum"
               type="text"
               placeholder="Contact #"
-              {...register("contactnum")}
+              value={fields.contactnum}
+              onChange={handleChange}
               />
             </div>
           </div>
@@ -72,7 +90,8 @@ export function Form({setShowForm}: FormProps) {
                 id="street"
                 type="text"
                 placeholder="Enter Street"
-                {...register("street")}
+                value={fields.street}
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -86,7 +105,8 @@ export function Form({setShowForm}: FormProps) {
                 id="city"
                 type="text"
                 placeholder="City"
-                {...register("city")}
+                value={fields.city}
+                onChange={handleChange}
               />
             </div>
             <div className="md:w-1/2 px-3">
@@ -98,7 +118,8 @@ export function Form({setShowForm}: FormProps) {
                 id="postcode"
                 type="text"
                 placeholder="postcode"
-                {...register("postcode")}
+                value={fields.postcode}
+                onChange={handleChange}
               />
             </div>
             <div className="md:w-1/2 px-3">
@@ -110,7 +131,8 @@ export function Form({setShowForm}: FormProps) {
                 id="country"
                 type="text"
                 placeholder="country"
-                {...register("country")}
+                value={fields.country}
+                onChange={handleChange}
               />
             </div>
           </div>

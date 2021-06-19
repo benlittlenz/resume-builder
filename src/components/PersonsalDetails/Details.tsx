@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 type DetailsProps = {
   setShowForm: (showForm: boolean) => void;
 }
