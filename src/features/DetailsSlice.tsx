@@ -4,7 +4,7 @@ import type { RootState } from '../app/store'
 interface DetailsState {
   fullname?: any
   email?: any
-  phone?: any
+  contactnum?: any
   street?:any
   city?:any
   postcode?:any
