@@ -11,12 +11,12 @@ import { AddContent } from './AddContent'
 import { DesignName } from './Design/Name'
 export function Builder() {
   const [showModal, setShowModal] = useState(false)
-  const [showDesign, setShowDesign] = useState(true)
+  const [showDesign, setShowDesign] = useState(false)
   const details = useAppSelector((state) => state.detailsForm)
 
   return (
     <div>
-      <Navbar />
+      <Navbar setShowDesign={setShowDesign} showDesign={showDesign} />
       <div className="flex items-center bg-gray-100">
         <div className="h-screen w-4/12">
           {!showDesign && (
@@ -33,7 +33,6 @@ export function Builder() {
           {showDesign && (
             <DesignName />
           )}
-
         </div>
         <div className="h-screen w-6/12 bg-white shadow-lg rounded-md mx-8 my-8 mx-auto">
           <Name name={details.fullname} />

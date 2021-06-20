@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export function DesignName() {
+
   return (
     <div className="flex flex-col bg-white px-8 py-6 max-w-md rounded-lg shadow-lg">
       <div className="flex justify-between items-center">
