@@ -9,13 +9,13 @@ interface DetailsState {
   city?:any
   postcode?:any
   country?:any
+  nameSize?: any
 }
 
 const initialState: DetailsState = {}
 
 export const detailSlice = createSlice({
   name: 'details',
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
     formSubmitted: (state, action) => {
@@ -25,10 +25,16 @@ export const detailSlice = createSlice({
         ...action.payload
       }
     },
+    changeFontSize: (state, action) => {
+      const font = action.payload;
+      state.nameSize = font;
+      // console.log('state: ', state)
+      // console.log('action: ', action)
+    }
   },
 })
 
-export const { formSubmitted } = detailSlice.actions
+export const { formSubmitted, changeFontSize } = detailSlice.actions
 export const selectDetails = (state: RootState) => state
 
 export default detailSlice.reducer
