@@ -10,10 +10,14 @@ export function DesignName() {
 
   useEffect(() => {
     dispatch(changeFontSize(fontSize))
-    dispatch(changeFontWeight(fontWeight))
-  }, [fontSize, fontWeight]);
+  }, [fontSize]);
 
-  const sizeOptions = ['xs', 'sm', 'md', 'lg', 'xl']
+  useEffect(() => {
+    dispatch(changeFontWeight(fontWeight))
+  }, [fontWeight]);
+
+  const sizeOptions = ['xs', 'sm', 'base', 'lg', 'xl']
+  const weightOptions = ['normal', 'medium', 'semibold', 'bold', 'extrabold']
 
   return (
     <div className="flex flex-col bg-white px-8 py-6 max-w-2xl rounded-lg shadow-lg">
@@ -24,51 +28,25 @@ export function DesignName() {
       <div className="mt-4">
         <h4 className="text-gray-700 font-semibold text-sm">Size</h4>
         <div className="grid grid-cols-8 gap-1 mt-2">
-          <button
-            className="w-8 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontSize('xs')}
-          >XS</button>
-          <button
-            className="w-8 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontSize('sm')}
-          >S</button>
-          <button
-            className="w-8 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontSize('base')}
-          >M</button>
-          <button
-            className="w-8 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontSize('lg')}
-          >L</button>
-          <button
-            className="w-8 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontSize('xl')}
-          >XL</button>
+          {sizeOptions.map(size => (
+            <button
+              className="w-8 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
+              value={size}
+              onClick={() => setFontSize(size)}
+            >{size.toUpperCase()}</button>
+          ))}
+
         </div>
       </div>
       <div className="mt-4">
         <h4 className="text-gray-700 font-semibold text-sm">Weight</h4>
         <div className="grid grid-cols-5 gap-2 mt-2">
-          <button
-            className="w-18 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontWeight('normal')}
-          >Light</button>
-          <button
-            className="w-full text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontWeight('medium')}
-          >Normal</button>
-          <button
-            className="w-full text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontWeight('semibold')}
-          >Semi-bold</button>
-          <button
-            className="text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontWeight('bold')}
-          >Bold</button>
-          <button
-            className="text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
-            onClick={() => setFontWeight('extrabold')}
-          >Extra Bold</button>
+          {weightOptions.map(weight => (
+            <button
+              className="w-18 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
+              onClick={() => setFontWeight(weight)}
+            >{weight.charAt(0).toUpperCase() + weight.slice(1)}</button>
+          ))}
         </div>
       </div>
     </div>
