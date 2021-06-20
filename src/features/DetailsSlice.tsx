@@ -10,6 +10,7 @@ interface DetailsState {
   postcode?:any
   country?:any
   nameSize?: any
+  nameWeight?: any
 }
 
 const initialState: DetailsState = {}
@@ -28,13 +29,15 @@ export const detailSlice = createSlice({
     changeFontSize: (state, action) => {
       const font = action.payload;
       state.nameSize = font;
-      // console.log('state: ', state)
-      // console.log('action: ', action)
+    },
+    changeFontWeight: (state, action) => {
+      const weight = action.payload;
+      state.nameWeight = weight;
     }
   },
 })
 
-export const { formSubmitted, changeFontSize } = detailSlice.actions
+export const { formSubmitted, changeFontSize, changeFontWeight } = detailSlice.actions
 export const selectDetails = (state: RootState) => state
 
 export default detailSlice.reducer

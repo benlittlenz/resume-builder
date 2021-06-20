@@ -18,7 +18,7 @@ export function Builder() {
     <div>
       <Navbar setShowDesign={setShowDesign} showDesign={showDesign} />
       <div className="flex items-center bg-gray-100">
-        <div className="h-screen w-4/12">
+        <div className="h-screen w-5/12">
           {!showDesign && (
             <>
               <PersonalDetails />
@@ -34,7 +34,7 @@ export function Builder() {
             <DesignName />
           )}
         </div>
-        <div className="h-screen w-6/12 bg-white shadow-lg rounded-md mx-8 my-8 mx-auto">
+        <div className="h-screen w-6/12 bg-white shadow-lg rounded-md mx-8 my-8 ">
           <Name name={details.fullname} />
           <Contact details={details} />
         </div>
