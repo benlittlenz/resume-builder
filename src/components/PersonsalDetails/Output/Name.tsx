@@ -9,6 +9,9 @@ export function Name({name}: any) {
   } = useAppSelector((state) => state.detailsForm)
 
   return (
-    <h1 className={`title-font text-${nameSize} text-${headerAlignment} pt-4 mb-4 font-${nameWeight} text-gray-900`}>{name}</h1>
+    <h1
+      className={`title-font text-${nameSize} text-${headerAlignment} pt-4 mb-4 font-${nameWeight} text-gray-900
+        ${headerAlignment === 'left' ? ' pl-2' : headerAlignment === 'right' ? 'pr-2' : ''}
+      `}>{name}</h1>
   )
 }
