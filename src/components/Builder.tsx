@@ -9,6 +9,8 @@ import { Contact } from './PersonsalDetails/Output/Contact'
 import { Navbar } from './Navbar'
 import { AddContent } from './AddContent'
 import { DesignName } from './Design/Name'
+import { DesignHeader } from './Design/Header'
+
 export function Builder() {
   const [showModal, setShowModal] = useState(false)
   const [showDesign, setShowDesign] = useState(false)
@@ -31,7 +33,11 @@ export function Builder() {
             </>
           )}
           {showDesign && (
-            <DesignName />
+            <>
+<DesignName />
+<DesignHeader />
+            </>
+
           )}
         </div>
         <div className="h-screen w-6/12 bg-white shadow-lg rounded-md mx-8 my-8 ">

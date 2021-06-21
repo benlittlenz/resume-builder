@@ -30,12 +30,11 @@ export function DesignName() {
         <div className="grid grid-cols-8 gap-1 mt-2">
           {sizeOptions.map(size => (
             <button
-              className="w-8 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
+              className=" text-center px-2 bg-gray-50 hover:bg-gray-100 focus:outline-none rounded-lg cursor-pointer"
               value={size}
               onClick={() => setFontSize(size)}
             >{size.toUpperCase()}</button>
           ))}
-
         </div>
       </div>
       <div className="mt-4">
@@ -43,7 +42,7 @@ export function DesignName() {
         <div className="grid grid-cols-5 gap-2 mt-2">
           {weightOptions.map(weight => (
             <button
-              className="w-18 text-center px-2 bg-gray-50 hover:bg-gray-100 rounded-lg cursor-pointer"
+              className="w-18 text-center px-2 bg-gray-50 hover:bg-gray-100 focus:outline-none rounded-lg cursor-pointer"
               onClick={() => setFontWeight(weight)}
             >{weight.charAt(0).toUpperCase() + weight.slice(1)}</button>
           ))}
