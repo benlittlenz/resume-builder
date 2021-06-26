@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../redux/CounterSlice'
 import detaislsReducer from '../redux/PersonalDetailsSlice'
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
     detailsForm: detaislsReducer,
   },
 })

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { PDFViewer } from '@react-pdf/renderer';
 
 import { PersonalDetails } from './Display/PersonalDetails'
+import { Profile } from './Display/Profile/index'
 import { useAppSelector } from '../app/hooks';
 
 import { Name } from './Display/PersonalDetails/Output/Name'
 import { Contact } from './Display/PersonalDetails/Output/Contact'
+
 import { Navbar } from './Navbar'
 import { AddContent } from './AddContent'
 import { DesignName } from './Design/PersonalDetails'
@@ -23,6 +26,7 @@ export function Builder() {
           {!showDesign && (
             <>
               <PersonalDetails />
+              <Profile />
               <div className="flex justify-center w-full mx-auto">
                 <button
                   className="mt-6 bg-green-500 text-white text-lg font-semibold px-10 py-2 rounded-md"
@@ -33,8 +37,8 @@ export function Builder() {
           )}
           {showDesign && (
             <>
-<DesignName />
-<DesignHeader />
+              <DesignName />
+              <DesignHeader />
             </>
 
           )}

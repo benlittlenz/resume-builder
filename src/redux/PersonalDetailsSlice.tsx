@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../app/store'
 
-interface DetailsState {
-  fullname?: any
+type DetailsState = {
+  fullname?: string
   email?: any
   contactnum?: any
   street?:any
@@ -15,7 +15,19 @@ interface DetailsState {
   headerDisplayType?: any
 }
 
-const initialState: DetailsState = {}
+const initialState: DetailsState = {
+  fullname: '',
+  email: '',
+  contactnum: '',
+  street: '',
+  city: '',
+  postcode: '',
+  country: '',
+  nameSize: '',
+  nameWeight: '',
+  headerAlignment: 'center',
+  headerDisplayType: '',
+}
 
 export const detailSlice = createSlice({
   name: 'details',
@@ -25,7 +37,11 @@ export const detailSlice = createSlice({
       console.log("submitted!!", state)
       console.log("ACTION:", action.payload)
       return {
-        ...action.payload
+        ...action.payload,
+        nameSize: 'XL',
+        nameWeight: 'semibold',
+        headerAlignment: 'center',
+        headerDisplayType: 'icon',
       }
     },
     changeFontSize: (state, action) => {
