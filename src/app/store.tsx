@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import detaislsReducer from '../redux/PersonalDetailsSlice'
+import ProfileReducer from '../redux/ProfileSlice'
 
 export const store = configureStore({
   reducer: {
     detailsForm: detaislsReducer,
+    profileForm: ProfileReducer,
   },
 })
 
