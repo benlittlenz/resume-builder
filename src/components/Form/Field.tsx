@@ -2,27 +2,34 @@ import React, { useState } from "react";
 
 type FieldProps = {
   field: any
-  fieldChanged: any
-  type?: any
-  value: any
+  handleChange: () => void
 }
 
-export const Field = ({ field, fieldChanged, type, value }: FieldProps) => {
+export const Field = ({ field, handleChange }: FieldProps) => {
 
   return (
-    <div className="relative z-0 w-full mb-2 border border-gray-500">
-      <input
-        type={type || field.component}
-        name={field._uid}
-        placeholder=" "
-        required
-        value={value}
-        className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-        onChange={(e) => {
-          fieldChanged(field._uid, e.target.value);
-        }}
-      />
-      <label htmlFor={field._uid} className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500 pl-2">{field.label}</label>
+    <div className="">
+      <label
+        className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor={field ? field?.id : ''}
+      >
+        {field ? field?.label : ''}
+      </label>
+      {field.type === 'textarea' ? (
+        <textarea
+          className="autoexpand tracking-wide py-2 px-4 mb-3 leading-relaxed appearance-none block w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+          id={field ? field?.id : ''}
+          placeholder={field ? field?.label : ''}
+          onChange={handleChange}
+        ></textarea>
+      ) : (
+        <input
+          className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+          id={field ? field?.id : ''}
+          type="text"
+          placeholder={field ? field?.label : ''}
+          onChange={handleChange}
+        />
+      )}
     </div>
   )
 

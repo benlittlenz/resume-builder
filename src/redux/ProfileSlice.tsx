@@ -16,7 +16,7 @@ export const profileSlice = createSlice({
     formSubmitted: (state, action) => {
       console.log("submitted!!", state)
       console.log("ACTION:", action.payload)
-      state.profile = action.payload
+      state.profile = action.payload.profile
     },
   },
 })

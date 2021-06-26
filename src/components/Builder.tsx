@@ -7,6 +7,7 @@ import { useAppSelector } from '../app/hooks';
 
 import { Name } from './Display/PersonalDetails/Output/Name'
 import { Contact } from './Display/PersonalDetails/Output/Contact'
+import { ProfileOutput } from './Display/Profile/Output'
 
 import { Navbar } from './Navbar'
 import { AddContent } from './AddContent'
@@ -46,6 +47,9 @@ export function Builder() {
         <div className="h-screen w-6/12 bg-white shadow-lg rounded-md mx-8 my-8 ">
           <Name name={details.fullname} />
           <Contact details={details} />
+          <div>
+            <ProfileOutput />
+          </div>
         </div>
       </div>
       {showModal && <AddContent />}

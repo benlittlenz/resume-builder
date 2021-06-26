@@ -54,24 +54,24 @@ export const Form = ({ formData, handleChange }: FormProps) => {
     <form className="flex flex-col bg-white px-6 py-6 max-w-md rounded-lg shadow-lg">
       {currentPageData.fields?.map(({ field }: any) => {
         console.log(field)
-        return (
-          <div className="flex justify-between items-center py-4">
-            <div className="">
-              <label
-                className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor={field ? field?.id : ''}
-              >
-                {field ? field?.label : ''}
-              </label>
-              <input
-                className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                id={field ? field?.id : ''}
-                type="text"
-                placeholder={field ? field?.label : ''}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-        )
+        switch (field.component) {
+          case "field_group":
+            return (
+              <div>
+
+              </div>
+            )
+          case "text_area":
+            return (
+              <div>
+
+              </div>
+            )
+          default:
+            return (
+              <Field field={field} handleChange={handleChange}/>
+            )
+        }
       })}
       <div className="pt-8 flex justify-end space-x-4">
         <button

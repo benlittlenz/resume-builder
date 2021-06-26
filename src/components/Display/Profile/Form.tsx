@@ -25,7 +25,7 @@ export const formData = [
         field: {
             component: "text",
             label: "Profile",
-            type: "text",
+            type: "textarea",
             id: "profile"
           }
       },
