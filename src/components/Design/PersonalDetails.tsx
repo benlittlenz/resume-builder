@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAppDispatch } from '../../app/hooks';
-import { changeFontSize, changeFontWeight } from '../../features/DetailsSlice';
+import { changeFontSize, changeFontWeight } from '../../redux/PersonalDetailsSlice';
 
 export function DesignName() {
   const [fontSize, setFontSize] = useState('XL')

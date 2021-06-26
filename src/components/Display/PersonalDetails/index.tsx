@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Form } from './Form';
-import { Details } from './Details';
+import { Details } from './Display';
 
 export function PersonalDetails() {
   const [data, setData] = useState({})

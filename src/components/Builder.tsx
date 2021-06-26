@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 
-import { PersonalDetails } from './PersonsalDetails'
-import { Counter } from '../features/Counter'
+import { PersonalDetails } from './Display/PersonalDetails'
 import { useAppSelector } from '../app/hooks';
 
-import { Name } from './PersonsalDetails/Output/Name'
-import { Contact } from './PersonsalDetails/Output/Contact'
+import { Name } from './Display/PersonalDetails/Output/Name'
+import { Contact } from './Display/PersonalDetails/Output/Contact'
 import { Navbar } from './Navbar'
 import { AddContent } from './AddContent'
-import { DesignName } from './Design/Name'
+import { DesignName } from './Design/PersonalDetails'
 import { DesignHeader } from './Design/Header'
 
 export function Builder() {

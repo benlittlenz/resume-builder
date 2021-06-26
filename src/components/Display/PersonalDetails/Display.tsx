@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppSelector } from '../../app/hooks';
+import { useAppSelector } from '../../../app/hooks';
 
 type DetailsProps = {
   setShowForm: (showForm: boolean) => void;

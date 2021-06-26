@@ -12,6 +12,7 @@ interface DetailsState {
   nameSize?: any
   nameWeight?: any
   headerAlignment?: any
+  headerDisplayType?: any
 }
 
 const initialState: DetailsState = {}
@@ -38,11 +39,20 @@ export const detailSlice = createSlice({
     changeAlignment: (state, action) => {
       const alignment = action.payload;
       state.headerAlignment = alignment;
+    },
+    changeHeaderDisplay: (state, action) => {
+      state.headerDisplayType = action.payload;
     }
   },
 })
 
-export const { formSubmitted, changeFontSize, changeFontWeight, changeAlignment } = detailSlice.actions
+export const {
+  formSubmitted,
+  changeFontSize,
+  changeFontWeight,
+  changeAlignment,
+  changeHeaderDisplay
+ } = detailSlice.actions
 export const selectDetails = (state: RootState) => state
 
 export default detailSlice.reducer

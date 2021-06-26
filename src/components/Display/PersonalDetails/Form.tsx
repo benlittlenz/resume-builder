@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useForm } from '../hooks/useForm'
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { formSubmitted } from '../../features/DetailsSlice';
+import { useForm } from '../../../app/hooks/useForm'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { formSubmitted } from '../../../redux/PersonalDetailsSlice';
 
 type FormProps = {
   setShowForm: (showForm: boolean) => void;
@@ -29,7 +29,7 @@ export function Form({setShowForm, setData}: FormProps) {
     country: ''
   })
   const dispatch = useAppDispatch()
-  
+
   useEffect(() => {
     dispatch(formSubmitted(fields))
   }, [fields]);

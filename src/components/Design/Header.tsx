@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useAppDispatch } from '../../app/hooks';
-import { changeAlignment } from '../../features/DetailsSlice';
+import { changeAlignment } from '../../redux/PersonalDetailsSlice';
 
 export function DesignHeader() {
   const [alignment, setAlignment] = useState('center')
+  const [displayType, setDisplayType] = useState('icon')
 
   const dispatch = useAppDispatch()
 
@@ -92,6 +93,35 @@ export function DesignHeader() {
             </svg>
           </button>
         </div>
+      </div>
+      <div className="flex items-center mt-4">
+        <button
+           className={`py-1 px-8 mx-2 rounded-lg border-2 focus:outline-none text-semibold tracking-wide hover:shadow:md
+           ${displayType === 'icon'
+             ? 'border-indigo-400 bg-indigo-200 text-indigo-800 hover:bg-indigo-400 hover:text-white'
+             : 'border-gray-300 bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
+             onChange={() => setDisplayType('icon')}
+            >
+          Icon
+        </button>
+        <button
+          className={`py-1 px-8 mx-2 rounded-lg border-2 focus:outline-none text-semibold tracking-wide hover:shadow:md
+          ${displayType === 'bullet'
+            ? 'border-indigo-600 bg-indigo-200 text-indigo-800 hover:bg-indigo-400 hover:text-white'
+            : 'border-gray-300 bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
+            onChange={() => setDisplayType('bullet')}
+            >
+          Bullet
+        </button>
+        <button
+          className={`py-1 px-8 mx-2 rounded-lg border-2 focus:outline-none text-semibold tracking-wide hover:shadow:md
+          ${displayType === 'line'
+            ? 'border-indigo-600 bg-indigo-200 text-indigo-800 hover:bg-indigo-400 hover:text-white'
+            : 'border-gray-300 bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
+          onChange={() => setDisplayType('line')}
+          >
+          Line
+        </button>
       </div>
     </div>
   )
