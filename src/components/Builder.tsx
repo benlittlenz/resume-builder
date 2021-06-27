@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { PDFViewer } from '@react-pdf/renderer';
 
+import { useAppSelector } from '../app/hooks';
+
 import { PersonalDetails } from './Display/PersonalDetails'
 import { Profile } from './Display/Profile/index'
-import { useAppSelector } from '../app/hooks';
+import { TechnicalSkills } from './Display/Skills/index'
 
 import { Name } from './Display/PersonalDetails/Output/Name'
 import { Contact } from './Display/PersonalDetails/Output/Contact'
@@ -28,6 +30,7 @@ export function Builder() {
             <>
               <PersonalDetails />
               <Profile />
+              <TechnicalSkills />
               <div className="flex justify-center w-full mx-auto">
                 <button
                   className="mt-6 bg-green-500 text-white text-lg font-semibold px-10 py-2 rounded-md"

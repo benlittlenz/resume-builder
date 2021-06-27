@@ -16,7 +16,7 @@ export const Field = ({ field, handleChange }: FieldProps) => {
       </label>
       {field.type === 'textarea' ? (
         <textarea
-          className="autoexpand tracking-wide py-2 px-4 mb-3 leading-relaxed appearance-none block w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+          className="autoexpand tracking-wide py-2 px-4 mb-3 leading-relaxed appearance-none block w-full border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
           id={field ? field?.id : ''}
           placeholder={field ? field?.label : ''}
           onChange={handleChange}
