@@ -17,3 +17,10 @@ The goal of this project is to add the following features:
 * Projects
 
 With the ability to customize the design and download it in a PDF format.
+
+### Installation
+```bash
+git clone https://github.com/benlittlenz/resume-builder.git
+cd resume-builder
+yarn && yarn start
+```
