@@ -4,9 +4,9 @@ import { Form } from '../../Form'
 import { useAppDispatch } from '../../../app/hooks';
 import { formSubmitted } from '../../../redux/ProfileSlice';
 
-type FormProps = {
-  setShowForm: (showForm: boolean) => void;
-}
+// type FormProps = {
+//   setShowForm: (showForm: boolean) => void;
+// }
 
 type Inputs = {
   skill: string,
@@ -32,11 +32,11 @@ export const formData = [
       },
       {
         component: "field",
-        label: "Information / Subskill",
+        label: "Information / Sub-skill",
         _uid: "information",
         field: {
             component: "text",
-            label: "Information / Subskill",
+            label: "Information / Sub-skill",
             type: "text",
             id: "information"
           }
@@ -45,7 +45,7 @@ export const formData = [
   },
 ];
 
-export function ProfileForm({setShowForm}: FormProps) {
+export function CreateSkill() {
   const [fields, handleChange] = useForm({
     profile: '',
   })

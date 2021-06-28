@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CreateSkill } from './CreateSkill'
 
 type SkillsProps = {
   setShowForm: (showForm: boolean) => void;
@@ -10,9 +11,7 @@ export function Details({ setShowForm }: SkillsProps) {
   return (
     <>
       {showCreateSkill ? (
-        <div>
-          ggfddgfgd
-        </div>
+        <CreateSkill />
       ) : (
         <div className="flex flex-col bg-white px-8 py-6 max-w-md rounded-lg shadow-lg">
           <div className="flex justify-between items-center">

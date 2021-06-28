@@ -8,7 +8,7 @@ type FieldProps = {
 export const Field = ({ field, handleChange }: FieldProps) => {
 
   return (
-    <div className="">
+    <div className="py-2">
       <label
         className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor={field ? field?.id : ''}
       >
@@ -23,7 +23,7 @@ export const Field = ({ field, handleChange }: FieldProps) => {
         ></textarea>
       ) : (
         <input
-          className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+          className="appearance-noneblock w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
           id={field ? field?.id : ''}
           type="text"
           placeholder={field ? field?.label : ''}
